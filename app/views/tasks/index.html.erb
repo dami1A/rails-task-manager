@@ -8,11 +8,11 @@
     <br>
     <li>
       <% if task.completed %>
-        <i class="far fa-check-square"><%= link_to "  #{task.title}", task_path(task) %></i>
+        <i class="far fa-check-square"><%= " #{task.title} " %><%= link_to '<i class="fas fa-info-circle"></i>'.html_safe, task_path(task) %></i>
       <% else %>
-        <i class="far fa-square"><%= link_to "  #{task.title}", task_path(task) %></i>
+        <i class="far fa-square"><%= " #{task.title} " %><%= link_to '<i class="fas fa-info-circle"></i>'.html_safe, task_path(task) %></i>
       <% end %>
-      <%= link_to <i class="far fa-trash-alt"></i>, task_path(task),
+      <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, task_path(task),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
     </li>
